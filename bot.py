@@ -2,7 +2,9 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 
 # 🔑 ВСТАВ СВІЙ ТОКЕН ВІД @BotFather
-TOKEN = "8238889887:AAH5zyMcQ8OzKbLXKfg2r4r5TSChQt6fb-s"
+import os
+TOKEN = os.getenv("BOT_TOKEN")
+
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
@@ -27,3 +29,4 @@ async def join_request_handler(update: types.ChatJoinRequest):
 # ▶️ Запуск бота
 if __name__ == "__main__":
     executor.start_polling(dp)
+
